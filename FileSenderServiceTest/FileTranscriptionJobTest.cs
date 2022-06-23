@@ -2,20 +2,14 @@
 {
     using FileSenderService;
     using FileSenderService.Domain;
-    using FileSenderService.Infrastructre.CloudTranscriber;
-    using FileSenderService.Infrastructre.FileSaver;
     using Microsoft.AspNetCore;
-    using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.DependencyInjection.Extensions;
     using Microsoft.Extensions.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.IO;
-    using System.Threading.Tasks;
 
     [TestClass]
     public class FileTranscriptionJobTest
