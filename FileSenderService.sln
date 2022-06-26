@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{9B6C5213-687A-4582-B9F9-72D53D5CE6B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuartzService", "QuartzService", "{132EFF6A-8696-4936-8622-E25F9818A61A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D3E78324-38A1-413B-9FF8-A1B4496D3A90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C5026E6F-2BF6-47CD-96B9-DFB02AEFD9A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSenderQuartzService", "apps\QuartzService\FileSenderQuartzService.csproj", "{6B374DFF-C336-4B87-ADAA-27D4D1ADD83D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSender", "src\FileSender\FileSender.csproj", "{0379B3DA-98A8-4EDD-81F1-62751D376F16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{526EFE4F-09AE-4467-9F34-2BB111243415}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSenderQuartzServiceTest", "test\src\FileSenderServiceTest\FileSenderQuartzServiceTest.csproj", "{F521C9C1-5BC8-4164-804E-EF83C0CE0D06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B374DFF-C336-4B87-ADAA-27D4D1ADD83D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B374DFF-C336-4B87-ADAA-27D4D1ADD83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B374DFF-C336-4B87-ADAA-27D4D1ADD83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B374DFF-C336-4B87-ADAA-27D4D1ADD83D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0379B3DA-98A8-4EDD-81F1-62751D376F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0379B3DA-98A8-4EDD-81F1-62751D376F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0379B3DA-98A8-4EDD-81F1-62751D376F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0379B3DA-98A8-4EDD-81F1-62751D376F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F521C9C1-5BC8-4164-804E-EF83C0CE0D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F521C9C1-5BC8-4164-804E-EF83C0CE0D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F521C9C1-5BC8-4164-804E-EF83C0CE0D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F521C9C1-5BC8-4164-804E-EF83C0CE0D06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{132EFF6A-8696-4936-8622-E25F9818A61A} = {9B6C5213-687A-4582-B9F9-72D53D5CE6B5}
+		{6B374DFF-C336-4B87-ADAA-27D4D1ADD83D} = {132EFF6A-8696-4936-8622-E25F9818A61A}
+		{0379B3DA-98A8-4EDD-81F1-62751D376F16} = {D3E78324-38A1-413B-9FF8-A1B4496D3A90}
+		{526EFE4F-09AE-4467-9F34-2BB111243415} = {C5026E6F-2BF6-47CD-96B9-DFB02AEFD9A9}
+		{F521C9C1-5BC8-4164-804E-EF83C0CE0D06} = {526EFE4F-09AE-4467-9F34-2BB111243415}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B727146-D255-4C11-B9CF-EC0449734EE5}
+	EndGlobalSection
+EndGlobal
