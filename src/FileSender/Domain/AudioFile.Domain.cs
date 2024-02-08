@@ -10,7 +10,7 @@
 
         public const string EXTENSION = ".MP3";
 
-        public static AudioFile Send(string name, string extension, int size)
+        public static AudioFile CreateFileToSend(string name, string extension, int size)
         {
             Validate(name, extension, size);
 

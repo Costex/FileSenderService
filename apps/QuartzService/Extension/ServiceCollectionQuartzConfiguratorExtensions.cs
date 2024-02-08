@@ -4,7 +4,7 @@
     using Quartz;
     using System;
 
-    // Clase obtenida de https://andrewlock.net/using-quartz-net-with-asp-net-core-and-worker-services/
+    // Class obtained from https://andrewlock.net/using-quartz-net-with-asp-net-core-and-worker-services/
     public static class ServiceCollectionQuartzConfiguratorExtensions
     {
         public static void AddJobAndTrigger<T>(

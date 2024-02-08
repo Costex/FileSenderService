@@ -18,7 +18,7 @@
 
         public void Save(TranscribeFile transcribeFile)
         {
-            string path = this._audioFilePath + "\\" + transcribeFile.Name + transcribeFile.Extension;
+            string path = Path.Combine(this._audioFilePath, transcribeFile.Name + transcribeFile.Extension);
 
             try
             {

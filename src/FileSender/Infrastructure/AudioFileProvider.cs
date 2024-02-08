@@ -18,17 +18,15 @@
 
         public List<AudioFile> GetAllAudioFiles()
         {
-            List<AudioFile> audiFiles = new List<AudioFile>();
-
+            var audiFiles = new List<AudioFile>();
             string[] files = Directory.GetFiles(this._audioFilePath);
             
             foreach(string filePath in files)
             {
-                FileInfo fileInfo = new FileInfo(filePath);
-
+                var fileInfo = new FileInfo(filePath);
                 try
                 {
-                    AudioFile audioFile = AudioFile.Send(
+                    var audioFile = AudioFile.CreateFileToSend(
                         Path.GetFileNameWithoutExtension(fileInfo.Name),
                         fileInfo.Extension,
                         (int)fileInfo.Length);
@@ -52,13 +50,11 @@
 
         public Stream GetAudioFileContent(AudioFile audioFile)
         {
-            using (FileStream file = new FileStream(Path.Combine(this._audioFilePath, audioFile.Name + audioFile.Extension), FileMode.Open, FileAccess.Read))
+            using (var file = new FileStream(Path.Combine(this._audioFilePath, audioFile.Name + audioFile.Extension), FileMode.Open, FileAccess.Read))
             {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    file.CopyTo(ms);
-                    return ms;
-                }
+                var ms = new MemoryStream();
+                file.CopyTo(ms);
+                return ms;
             }
         }
     }

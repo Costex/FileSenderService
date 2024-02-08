@@ -13,7 +13,7 @@
             AudioFile audioFile = null;
             using (FileStream file = new FileStream("./Resources/AudioAceptable.mp3", FileMode.OpenOrCreate, FileAccess.ReadWrite))
             {
-                audioFile = AudioFile.Send("AudioAceptable", ".mp3", (int)file.Length);
+                audioFile = AudioFile.CreateFileToSend("AudioAceptable", ".mp3", (int)file.Length);
             }
 
             var serviceProvider = InfrastructureTestCase.GetServiceProvider();

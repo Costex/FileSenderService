@@ -27,19 +27,19 @@
 
         public void Transcribe(AudioFileTranscriberRequest request)
         {
-            ParallelOptions option = new ParallelOptions();
-            option.MaxDegreeOfParallelism = request.BlockFiles;
+            var parallelOptions = new ParallelOptions();
+            parallelOptions.MaxDegreeOfParallelism = request.BlockFiles;
 
-            List<AudioFile> audioFiles = this._audioFileProvider.GetAllAudioFiles();
+            var audioFiles = this._audioFileProvider.GetAllAudioFiles();
 
             Parallel.ForEach(
                 audioFiles,
-                option,
+                parallelOptions,
                 audioFile =>
                 {
                     try
                     {
-                        TranscribeFile transcribeFile = this._fileTranscriber.Transcribe(audioFile);
+                        var transcribeFile = this._fileTranscriber.Transcribe(audioFile);
 
                         this._fileSaver.Save(transcribeFile);
                     }

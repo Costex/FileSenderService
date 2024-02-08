@@ -18,9 +18,10 @@
 
         public Task Execute(IJobExecutionContext context)
         {
+            const int FILES_PER_BLOCK = 3;
             AudioFileTranscriberRequest request = new AudioFileTranscriberRequest
             {
-                BlockFiles = 3
+                BlockFiles = FILES_PER_BLOCK
             };
 
             this._log.LogInformation("Starting FileTranscriptionJob.");

@@ -4,7 +4,6 @@
     using Microsoft.Extensions.Logging;
     using Polly;
     using System;
-    using System.IO;
 
     public sealed class TranscriberInCloud : InvoxMedicalClient, ITranscriber
     {
@@ -19,30 +18,14 @@
 
         public TranscribeFile Transcribe(AudioFile audioFile)
         {
-            Policy policy = Policy
+            var policy = Policy
                 .Handle<Exception>()
                 .Retry(3, (exception, retryCount) =>
                 {
                     this._log.LogInformation($"Error file transcription: {audioFile.Name}. Retrycount: {retryCount}");
                 });
 
-            PolicyResult<TranscribeFile> policyResult = policy.ExecuteAndCapture(
-                () =>
-                    {
-                        Stream audioFileContent = this._audioFileProvider.GetAudioFileContent(audioFile);
-                        Stream transcriptionContent = this.TranscribeFile(audioFileContent);
-
-                        byte[] buffer = new byte[(int)(transcriptionContent.Length)];
-                        transcriptionContent.Read(buffer, 0, buffer.Length);
-
-                        TranscribeFile transcribeFile = new TranscribeFile(
-                            audioFile.Name,
-                            ".txt",
-                            buffer.Length,
-                            buffer);
-
-                        return transcribeFile;
-                    });
+            var policyResult = policy.ExecuteAndCapture(() => CreateTranscribeFileFromAudio(audioFile));
 
             if (policyResult.FinalException != null)
             {
@@ -51,6 +34,27 @@
             }
 
             return policyResult.Result;
+            #region Local Method
+            TranscribeFile CreateTranscribeFileFromAudio(AudioFile audio)
+            {
+                using (var audioFileContent = this._audioFileProvider.GetAudioFileContent(audio))
+                {
+                    using (var transcriptionContent = this.TranscribeFile(audioFileContent))
+                    {
+                        var buffer = new byte[(int)(transcriptionContent.Length)];
+                        transcriptionContent.Read(buffer, 0, buffer.Length);
+
+                        var transcribeFile = new TranscribeFile(
+                            audioFile.Name,
+                            ".txt",
+                            buffer.Length,
+                            buffer);
+
+                        return transcribeFile;
+                    }
+                }
+            }
+            #endregion
         }
     }
 }
