@@ -2,7 +2,7 @@
 {
     public partial class TranscribeFile
     {
-        private const string EXTENSION = ".TXT";
+        public const string EXTENSION = ".TXT";
 
         public static TranscribeFile Transcription(string name, string extension, int size, byte[] content)
         {

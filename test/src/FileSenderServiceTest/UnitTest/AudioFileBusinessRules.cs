@@ -5,7 +5,7 @@
     using System.IO;
     using Xunit;
 
-    public sealed class AudioFilesBusinessRules
+    public sealed class AudioFileBusinessRules
     {
 
         [Theory]

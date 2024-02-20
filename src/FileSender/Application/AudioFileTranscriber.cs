@@ -3,7 +3,6 @@
     using FileSender.Domain;
     using Microsoft.Extensions.Logging;
     using System;
-    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public class AudioFileTranscriber
