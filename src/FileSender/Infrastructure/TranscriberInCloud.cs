@@ -5,7 +5,7 @@
     using Polly;
     using System;
 
-    public sealed class TranscriberInCloud : InvoxMedicalClient, ITranscriber
+    public sealed class TranscriberInCloud : InvoxMedicalClientDummy, ITranscriber
     {
         private readonly ILogger<TranscriberInCloud> _log;
         private readonly IAudioFileProvider _audioFileProvider;

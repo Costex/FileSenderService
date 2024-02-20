@@ -2,7 +2,7 @@
 {
     using System.IO;
 
-    public class InvoxMedicalClient
+    public class InvoxMedicalClientDummy
     {
         protected Stream TranscribeFile(Stream fileContent)
         {

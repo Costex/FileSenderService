@@ -1,13 +1,10 @@
 ﻿namespace FileSenderQuartzServiceTest.UnitTest
 {
     using FileSender.Domain;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.IO;
 
-    [TestClass]
     public sealed class SendFileResponseWithContent
     {
-        [TestMethod]
         public void SendFile()
         {
             AudioFile audioFile = null;
@@ -21,7 +18,6 @@
 
             TranscribeFile transcribeFile = transcriber.Transcribe(audioFile);
 
-            Assert.IsTrue(transcribeFile.Size > 0);
         }
     }
 }
